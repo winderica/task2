@@ -9,8 +9,9 @@ body {
     margin: 0;
     height: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
-ul {
+.first > ul, .second > ul, .nav-page > ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -23,29 +24,42 @@ li {
 
 li a, .menu-btn {
     display: inline-block;
-    color: rgb(242, 242, 242);
+    color: white;
     text-align: left;
     text-decoration: none;
     position: relative;
+    cursor: pointer;
 }
-li.menu {
+.menu {
     display: inline-block;
+    cursor: pointer;
 }
+
 .menu-content {
     display: none;
     position: absolute;
-    min-width: 160px;
+    width: 294px;
+    background-color: rgb(26, 26, 26);
+    z-index: 10;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 2px rgb(241, 241, 241) solid;
+    margin-left: 4px;
 }
 
-.menu-content a {
+.menu-content > a {
     color: rgb(242, 242, 242);
-    padding: 12px 16px;
+    position: relative;
+    padding: 18px 0 18px 24px;
     text-decoration: none;
     display: block;
+    font-size: 15px;
+    font-weight: 400;
 }
 
-.menu-content a:hover {
+.menu-content > a:hover {
     background-color: rgb(37, 37, 37);
+    text-decoration-line: underline;
 }
 .menu-btn:before {
     background: white;
@@ -60,7 +74,7 @@ li.menu {
     display: block;
 }
 
-.navbar {
+header {
     margin-top: 8px;
     position: absolute;
     width: 100%;
@@ -69,6 +83,7 @@ li.menu {
     height: 23px;
     width: 108px;
     margin-top: -1px;
+    cursor: pointer;
 }
 .link-ms {
     height: 48px;
@@ -79,6 +94,7 @@ li.menu {
     float: left;
     display: block;
     box-sizing: border-box;
+    cursor: pointer;
 }
 .nav-1 {
     padding: 0 5%;
@@ -95,8 +111,16 @@ li.menu {
 .first > ul > li {
     font-size: 15px;
     text-align: left;
-    text-size-adjust: 100%;
     display: inline-block;
+    position: relative;
+}
+.first > ul > li > a:hover:before {
+    content: "";
+    height: 2px;
+    position: absolute;
+    bottom: 8px;
+    width: calc(100% - 54px);
+    background-color: white;
 }
 .first > ul > li > a {
     padding: 14px 27px 10px 27px;
@@ -119,7 +143,7 @@ li.menu {
 .menu-btn {
     padding: 0 27px 0 25px;
     border: 1px solid transparent;
-    margin: 1px 0 1px 4px;
+    margin: 1px 0 0 4px;
     background-color: rgba(255, 255, 255, 0);
     font-size: 15px;
     line-height: 46px;
@@ -139,6 +163,47 @@ li.menu {
     top: -4px;
     left: 10px;
 }
+
+.nav-page {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    padding: 0 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    color: white;
+}
+.nav-page p {
+    display: block;
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 8px;
+}
+.nav-page ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    white-space: nowrap;
+}
+.nav-page li {
+    display: inline-block;
+    font-size: 15px;
+    padding: 20px 0;
+    margin: 0 20px 0 24px;
+    white-space: nowrap;
+}
+.nav-page .btn {
+    display: inline-block;
+    position: relative;
+    float: right;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .block-1 {
     font-size: 0;
 }
@@ -202,6 +267,17 @@ li.menu {
     top: 0;
     left: 10px;
 }
+.arrow-l {
+    border: solid white;
+    border-width: 0 1.5px 1.5px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: relative;
+    top: 0;
+    left: 10px;
+}
 .block-2 {
     position: relative;
     font-size: 0;
@@ -242,11 +318,9 @@ li.menu {
     position: relative;
 }
 .bg-3 {
-    width: 190%;
     position: fixed;
     top: 0;
-    left: -45%;
-    right: 0;
+    left: 0;
     z-index: -2;
 }
 .box {
@@ -331,7 +405,7 @@ li.menu {
     line-height: 20px;
 }
 
-.slash {
+.bevel {
     background-color: rgb(23, 23, 23);
     margin: 30px 0 1px;
     transform: skew(0deg, -3deg);
@@ -352,38 +426,91 @@ li.menu {
     display: inline-block;
 }
 
+.block-5 {
+    background-color: rgb(23, 23, 23);
+    overflow: hidden;
+    color: white;
+    margin-top: -50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
 
+.fade {
+    margin-right: 220px;
+    margin-left: 220px;
+}
 
+.fade p {
+    display: inline;
+    padding: 38px 0 2px;
+}
 
+.quote {
+    display: inline;
+    width: 121px;
+    height: 103px;
+}
+
+.slash {
+    display: inline;
+    width: 84px;
+    height: 145px;
+}
+
+.company {
+    display: inline;
+    width: 70px;
+    height: 42px;
+    padding: 0 24px;
+}
+.block-6 {
+    background-color: rgb(23, 23, 23);
+    padding-bottom: 72px;
+}
+.block-6 .subtitle-5 {
+    font-size: 24px;
+}
 .block-7 {
     background-color: rgb(23, 23, 23);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100px;
 }
 .details {
-    padding: 40.25% 5% 0;
+    padding: 0 5%;
     position: relative;
 }
 .gallery {
-    position: absolute;
-    top: 40%;
+    position: relative;
     left: 50%;
-    bottom: auto;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     padding: 0;
     float: left;
-    width: 83.33333%;
+    width: 83.333333%;
     margin: 0 auto;
 }
 .gallery > div {
     margin: 0 auto;
     position: relative;
-    width: 80%;
+    width: 90%;
 }
 .angle {
     width: 32.333333%;
     margin: 0 0 4px 4px;
     float: left;
     cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
+.fadein {
+    transition: 0.25s ease-out;
+    width: 100%;
+}
+.fadein:hover {
+    transform: scale(1.2);
+    transition: 1.5s ease-in;
+}
+
 .block-8 {
     padding-bottom: 48px;
     width: 100%;
@@ -463,6 +590,39 @@ li.menu {
     color: rgb(200, 200, 200);
     margin: 0 auto;
 }
+.games {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+}
+.games > li {
+    display: table-cell;
+    width: 20%;
+    overflow: hidden;
+    height: 41.65vw;
+    position: relative;
+}
+.game {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.games > li:hover .game {
+    height: 120%;
+    width: 120%;
+}
+.game-logo {
+    position: absolute;
+    bottom: 56px;
+    width: 77%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .block-11 {
     background-color: rgb(23, 23, 23);
     overflow: hidden;
@@ -508,9 +668,9 @@ li.menu {
     font-size: 13px;
     text-decoration: none;
     line-height: 16.9px;
+    display: block;
 }
 .block-12 {
-    padding-top: 48px;
     background-color: rgb(23, 23, 23);
 }
 .compatible {
@@ -539,6 +699,13 @@ li.menu {
 .devices > div > img {
     height: 56px;
     width: 56px;
+}
+
+.block-9, .block-13 {
+    text-align: center;
+    color: rgb(200, 200, 200);
+    background-color: rgb(23, 23, 23);
+    overflow: hidden;
 }
 
 .block-14 {
@@ -573,13 +740,15 @@ li.menu {
 .buy {
     float: right;
     width: 600px;
-    padding-left: 85px;
 }
 .up {
     padding: 8.1vw 48px 0;
 }
 .down {
     padding: 25px 48px 0;
+}
+.down div {
+    padding: 25px 1px 0;
 }
 .p0 {
     display: block;
@@ -623,14 +792,21 @@ li.menu {
     padding: 10px 0 4px;
     border: 2px transparent;
     margin-top: 14px;
+    letter-spacing: 0.075em;
 }
-
+.down a {
+    display: inline-block;
+    padding: 0 27px 0 25px;
+    font-weight: 700;
+}
+.link i {
+    border-color: rgb(93, 194, 30);
+}
 .top {
     margin: 0 0 24px;
     border: 0;
     border-top: 1px solid rgb(200, 200, 200);
 }
-
 .bottom {
     margin: 36px 0 0;
     border: 0;
@@ -639,7 +815,8 @@ li.menu {
 .block-16 {
     background-color: rgb(23, 23, 23);
     color: white;
-    padding: 42px 5%;
+    padding: 42px 5% 90px;
+    overflow: hidden;
 }
 .block-16 > div > i {
     display: block;
@@ -655,6 +832,53 @@ li.menu {
     font-size: 13px;
     display: inline-block;
     line-height: 1.3;
-    padding: 10px 42px 10px 24px;
+    padding: 10px 35px 10px 24px;
     cursor: pointer;
+    letter-spacing: 0.075em;
+}
+.btn > a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer {
+    background-color: rgb(242, 242, 242);
+    color: rgb(97, 97, 97);
+    overflow: hidden;
+    font-size: 11px;
+    padding: 0 5%;
+}
+.relevant div {
+    width: 16.666667%;
+    padding: 0 12px;
+    float: left;
+}
+.relevant p {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700;
+    clear: left;
+    padding: 36px 0 4px;
+    margin: 0;
+}
+.relevant a {
+    line-height: 16px;
+    clear: left;
+    padding: 8px 0;
+    margin: 0;
+    display: block;
+}
+.tail {
+    clear: left;
+    padding: 30px 0 16px;
+    overflow: hidden;
+}
+.tail > a {
+    float: left;
+}
+.tail > div {
+    float: right;
+}
+.tail > div > a {
+    padding: 0 24px 4px 0;
 }

@@ -6,7 +6,7 @@
     <link href="style/index.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
+    <header>
         <div>
             <div class="nav-1">
                 <a class="link-ms">
@@ -95,7 +95,7 @@
                         </li>
                         <li class="menu">
                             <button class="menu-btn">Xbox Support<i class="arrow-d"></i></button>
-                            <ul class="menu-content">
+                            <div class="menu-content">
                                 <a href="#">All support</a>
                                 <a href="#">Xbox One</a>
                                 <a href="#">Xbox 360</a>
@@ -107,7 +107,7 @@
                                 <a href="#">Error & Status Code Search</a>
                                 <a href="#">Xbox Live Status</a>
                                 <a href="#">Xbox Ambassadors Chat</a>
-                            </ul>
+                            </div>
                         </li>
                         <li class="menu">
                             <button class="menu-btn">My Xbox<i class="arrow-d"></i></button>
@@ -126,7 +126,31 @@
                 </nav>
             </div>
         </div>
-    </div>
+    </header>
+    <nav class="nav-page">
+        <p>Xbox One X</p>
+        <ul>
+            <li>
+                <a href="#overview">Overview</a>
+            </li>
+            <li>
+                <a href="#techSpecs">Tech specs</a>
+            </li>
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+            <li>
+                <a href="#gaming">True 4K gaming</a>
+            </li>
+            <li>
+                <a href="#enhanced">Xbox One X Enhanced</a>
+            </li>
+            <li>
+                <a href="#compat">Compatibility</a>
+            </li>
+        </ul>
+        <button class="btn"><a href="#buy">BUY NOW<i class="arrow-r"></i></a></button>
+    </nav>
     <div class="block-1">
         <img src="img/1.jpg" class="bg-1">
         <div class="header-1">
@@ -147,6 +171,7 @@
     </div>
     <div class="block-3">
         <img src="img/3.jpg" class="bg-3">
+        <a name="overview"></a>
         <div class="box">
             <div class="header-3">
                 <p class="title-3">The world's most powerful console</p>
@@ -194,29 +219,70 @@
         </div>
     </div>
     <div class="block-4">
-        <div class="slash">
+        <a name="techSpecs"></a>
+        <div class="bevel">
             <button class="toggle">SEE ALL TECH SPECS</button>
         </div>
     </div>
-    <div class="block-5"></div>
+    <div class="block-5">
+        <div class="slideshow">
+            <div class="fade">
+                <img src="img/quote.svg" class="quote">
+                <p class="intro-2">“Microsoft’s 4K beast has been unleashed”</p>
+                <img src="img/slash.svg" class="slash">
+                <img src="img/5b.svg" class="company">
+            </div>
+            <div class="fade">
+                <img src="img/quote.svg" class="quote">
+                <p class="intro-2">“The Xbox One X is Microsoft’s love letter to gamers”</p>
+                <img src="img/slash.svg" class="slash">
+                <img src="img/5a.svg" class="company">
+            </div>
+            <a class="prev"><i class="arrow-l"></i></a>
+            <a class="next"><i class="arrow-r"></i></a>
+        </div>
+        <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="pause"></span>
+        </div>
+    </div>
     <div class="block-6">
         <img>
+        <div class="header-5">
+            <p class="title-5">Designed for every angle</p>
+            <p class="subtitle-5">No matter how you view it, Xbox One X is sleek and distinctive.</p>
+        </div>
     </div>
     <div class="block-7">
+        <a name="gallery"></a>
         <div class="details">
             <div class="gallery">
                 <div>
-                    <img class="angle" src="img/7a.jpg">
-                    <img class="angle" src="img/7b.jpg">
-                    <img class="angle" src="img/7c.jpg">
-                    <img class="angle" src="img/7d.jpg">
-                    <img class="angle" src="img/7e.jpg">
-                    <img class="angle" src="img/7f.jpg">
+                    <div class="angle">
+                        <img class="fadein" src="img/7a.jpg">
+                    </div>
+                    <div class="angle">
+                        <img class="fadein" src="img/7b.jpg">
+                    </div>
+                    <div class="angle">
+                        <img class="fadein" src="img/7c.jpg">
+                    </div>
+                    <div class="angle">
+                        <img class="fadein" src="img/7d.jpg">
+                    </div>
+                    <div class="angle">
+                        <img class="fadein" src="img/7e.jpg">
+                    </div>
+                    <div class="angle">
+                        <img class="fadein" src="img/7f.jpg">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="block-8">
+        <a name="gaming"></a>
         <div class="container">
             <video class="video-l" poster="img/8.jpg" autoplay>
                 <source src="https://compass-ssl.xbox.com/assets/b5/e9/b5e9b871-bfed-4f66-b157-8cde71bd5a98.mov?n=Sea_of_Thieves_Desktop_1920.MP4.mov" type="video/mp4">
@@ -246,6 +312,7 @@
         </div>
     </div>
     <div class="block-9">
+        <p>SEE GAMING DETAILS</p>
     </div>
     <div class="block-10">
         <div class="header-5">
@@ -253,12 +320,27 @@
             <p class="subtitle-5">You can only play 4K games like Forza Motorsport 7, Crackdown 3, State of Decay 2, Sea of Thieves and Super Lucky’s Tale the way they’re meant to be played on Xbox One X.</p>
         </div>
         <div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="games">
+                <li>
+                    <img src="img/10as.jpg" class="game">
+                    <img src="img/10la.png" class="game-logo">
+                </li>
+                <li>
+                    <img src="img/10bs.jpg" class="game">
+                    <img src="img/10lb.png" class="game-logo">
+                </li>
+                <li>
+                    <img src="img/10cs.jpg" class="game">
+                    <img src="img/10lc.png" class="game-logo">
+                </li>
+                <li>
+                    <img src="img/10ds.jpg" class="game">
+                    <img src="img/10ld.png" class="game-logo">
+                </li>
+                <li>
+                    <img src="img/10es.jpg" class="game">
+                    <img src="img/10le.png" class="game-logo">
+                </li>
             </ul>
         </div>
     </div>
@@ -273,6 +355,7 @@
             <div class="shelf">
                 <img src="img/11.jpg">
             </div>
+            <a name="enhanced"></a>
             <div class="banner">
                 <div>
                     <div>
@@ -287,11 +370,13 @@
                 </div>
                 <p class="title-6">Look for the logos</p>
                 <p class="subtitle-6" style="width: 56vw">All games look and play great on Xbox One X. But select titles are optimized to take advantage of the world’s most powerful console. These games are Xbox One X Enhanced.</p>
-                <a class="link" href="https://www.xbox.com/en-US/games/xbox-one/xbox-one-x-enhanced-list">LEARN MORE ABOUT XBOX ONE X ENHANCED</a>
+                <a class="link" href="https://www.xbox.com/en-US/games/xbox-one/xbox-one-x-enhanced-list">LEARN MORE ABOUT XBOX ONE X ENHANCED<i class="arrow-r"></i></a>
             </div>
         </div>
     </div>
     <div class="block-12">
+        <a name="compat"></a>
+        <div style="height: 48px"></div>
         <img src="img/12.jpg" class="compatible">
         <div class="header-6">
             <p class="title-7">Compatible with everything Xbox One</p>
@@ -315,7 +400,9 @@
             </div>
         </div>
     </div>
-    <div class="block-13"></div>
+    <div class="block-13">
+        <p>SEE COMPATIBILITY DETAILS</p>
+    </div>
     <div class="block-14">
         <img src="img/14.jpg" class="multiplayer">
         <div class="header-7">
@@ -341,21 +428,22 @@
         </div>
     </div>
     <div class="block-15">
+        <a name="buy"></a>
         <div class="purchase">
             <div class="buy">
                 <div class="up">
                     <p class="p0">Xbox One X</p>
                     <p class="p1">Available now</p>
                     <p class="p2">The most powerful console in the world.</p>
-                    <a class="link">WHAT'S INCLUDED</a>
+                    <a class="link">WHAT'S INCLUDED<i class="arrow-r"></i></a>
                 </div>
                 <div class="down">
                     <hr class="top">
                     <p class="p3">Get free shipping and hassle free returns when you buy direct from Microsoft Store.</p>
                     <p class="p4">$499.99</p>
                     <div>
-                        <button class="btn">BUY NOW</button>
-                        <a>SHOP OTHER RETAILERS</a>
+                        <button class="btn">BUY NOW<i class="arrow-r"></i></button>
+                        <a class="link">SHOP OTHER RETAILERS<i class="arrow-r"></i></a>
                     </div>
                     <hr class="bottom">
                 </div>
@@ -371,6 +459,40 @@
             <i><sup>2</sup> Excludes the Xbox One S stand that works exclusively with the Xbox One S.<br></i>
         </div>
     </div>
+    <footer class="footer">
+        <div class="relevant">
+            <div style="padding-left: 0">
+                <p>Xbox</p>
+                <a>Feedback</a>
+                <a>Support</a>
+                <a>Photosensitive Seizure Warning</a>
+                <a>Code of Conduct</a>
+            </div>
+            <div>
+                <p>Fans</p>
+                <a>Xbox Wire</a>
+            </div>
+            <div>
+                <p>For Developers</p>
+                <a>Games</a>
+                <a>ID@Xbox</a>
+                <a>Windows 10</a>
+                <a>Jobs</a>
+                <a>Designed for Xbox</a>
+            </div>
+        </div>
+        <div class="tail">
+            <a>English (United States)</a>
+            <div>
+                <a>Contact us</a>
+                <a>Privacy & cookies</a>
+                <a>Terms of use</a>
+                <a>Trademarks</a>
+                <a>About our ads</a>
+                <a>© Microsoft 2017</a>
+            </div>
+        </div>
+    </footer>
     <script src="script/index.js"></script>
 </body>
 </html>
