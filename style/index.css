@@ -10,6 +10,7 @@ body {
     height: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+    background-color: rgb(23, 23, 23);
 }
 .first > ul, .second > ul, .nav-page > ul {
     list-style-type: none;
@@ -173,6 +174,7 @@ header {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 999;
     color: white;
+    display: none;
 }
 .nav-page p {
     display: block;
@@ -202,6 +204,9 @@ header {
     float: right;
     top: 50%;
     transform: translateY(-50%);
+}
+.nav-page li a:hover {
+    text-decoration: underline;
 }
 
 .block-1 {
@@ -238,10 +243,9 @@ header {
     margin: 0;
 }
 .btn-main {
-    margin: 40px auto;
+    margin: 40px 0 0 60px;
     width: 360px;
     padding: 1px;
-
 }
 .btn-main > .btn {
     margin-right: 23px;
@@ -255,6 +259,17 @@ header {
     cursor: pointer;
     color: white;
     background-color: transparent;
+}
+.play:before {
+    content: "";
+    color: rgb(93, 194, 30);
+    font-family: "Segoe MDL2 Assets";
+    height: 16px;
+    width: 16px;
+    margin: 0 10px;
+}
+.play a:hover {
+    text-decoration: underline;
 }
 .arrow-r {
     border: solid white;
@@ -319,9 +334,10 @@ header {
 }
 .bg-3 {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     z-index: -2;
+    transform: translate(-50%, -50%) scale(1.5, 1.5);
 }
 .box {
     margin: 0 auto;
@@ -428,41 +444,145 @@ header {
 
 .block-5 {
     background-color: rgb(23, 23, 23);
-    overflow: hidden;
     color: white;
-    margin-top: -50px;
+    overflow: hidden;
     padding-bottom: 50px;
     text-align: center;
+    position: relative;
+    height: 370px;
 }
-
+.slideshow {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
 .fade {
-    margin-right: 220px;
-    margin-left: 220px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 71.2%;
 }
-
-.fade p {
-    display: inline;
+.slide1 {
+    animation-name: slidein;
+    animation: 667ms both cubic-bezier(0.16, 1, 0.29, 0.99);
+}
+.slide2 {
+    animation-name: slideout;
+    animation: 667ms both cubic-bezier(0.16, 1, 0.29, 0.99);
+}
+@keyframes slidein {
+    from {
+        transform: translateX(40px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes slideout {
+    from {
+        transform: translateX(-40px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.fade-left p {
     padding: 38px 0 2px;
+    float: left;
+    font-size: 34px;
 }
-
+.fade-left {
+    display: inline-flex;
+    float: left;
+    width: 66.66666667%;
+}
+.fade-right {
+    display: inline-flex;
+    float: left;
+    width: 33.33333333%;
+}
+.fade-right p {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 38px;
+    line-height: 40px;
+}
 .quote {
-    display: inline;
+    display: inline-flex;
     width: 121px;
     height: 103px;
+    float: left;
 }
-
 .slash {
-    display: inline;
+    display: inline-flex;
     width: 84px;
     height: 145px;
+    float: left;
 }
-
 .company {
-    display: inline;
+    display: inline-flex;
     width: 70px;
     height: 42px;
-    padding: 0 24px;
+    margin: 38px 24px 0;
 }
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+.prev {
+    left: 0;
+}
+.next {
+    right: 20px;
+}
+.dots {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+.dot {
+    box-sizing: content-box;
+    cursor: pointer;
+    height: 4.5px;
+    width: 4.5px;
+    border-radius: 50%;
+    margin: 2px 1.5px;
+    border: white 1px solid;
+    background: 0;
+    display: inline-block;
+    content: "";
+    padding: 0;
+    transform: translateX(-10px);
+}
+.dot:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.4);
+}
+.active {
+    background: rgb(255, 255, 255);
+}
+.pause {
+    font-family: "Segoe MDL2 Assets";
+    background: 0;
+    border: rgba(0, 0, 0, 0) 1px solid;
+    color: white;
+    cursor: pointer;
+    top: 4px;
+    position: relative;
+    height: 38px;
+    width: 38px;
+}
+.pause:hover {
+    color: black;
+    background: white;
+}
+
 .block-6 {
     background-color: rgb(23, 23, 23);
     padding-bottom: 72px;
