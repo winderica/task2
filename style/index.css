@@ -585,7 +585,45 @@ header {
 
 .block-6 {
     background-color: rgb(23, 23, 23);
+    padding-top: 40px;
     padding-bottom: 72px;
+    width: 100%;
+    position: relative;
+}
+.rotate {
+    background: url("../img/6.jpg");
+    background-size: 100% 3000%;
+    position: relative;
+    padding-bottom: 37.5%;
+    width: 100%;
+}
+.block-6 .header-5 {
+    padding: 0;
+}
+.slider {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 186px;
+    height: 2px;
+    background: rgb(138, 138, 138);
+    outline: none;
+    cursor: ew-resize;
+    -webkit-appearance: none;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 56px;
+    height: 3px;
+    background: rgb(93, 194, 30);
+    cursor: ew-resize;
+}
+.drag {
+    color: rgb(200, 200, 200);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 3px;
 }
 .block-6 .subtitle-5 {
     font-size: 24px;
@@ -960,7 +998,9 @@ header {
     text-decoration: none;
     color: white;
 }
-
+.btn:hover {
+    border-color: rgb(12, 123, 21);
+}
 .footer {
     background-color: rgb(242, 242, 242);
     color: rgb(97, 97, 97);

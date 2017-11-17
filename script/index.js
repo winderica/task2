@@ -109,7 +109,11 @@ var block1 = document.getElementsByClassName("block-1")[0];
 var nav = document.getElementsByClassName("nav-page")[0];
 var block3 = document.getElementsByClassName("block-3")[0];
 var bg3 = document.getElementsByClassName("bg-3")[0];
-var videos = document.getElementsByClassName("video");
+var videos = document.getElementsByClassName("video-s");
+var videom = document.getElementsByClassName("video-m")[0];
+var videol = document.getElementsByClassName("video-l")[0];
+var block7 = document.getElementsByClassName("block-7")[0];
+var block11 = document.getElementsByClassName("block-11")[0];
 function getElementTop(e) {
     var t = e.offsetTop, c = e.offsetParent, h;
     while (c !== null) {
@@ -123,12 +127,32 @@ function getElementTop(e) {
     }
     return t - h;
 }
-window.addEventListener("scroll", function () {
-    bg3.style.transform = "translate(-50%, " + ((getElementTop(block3) + 760) / 15.65 - 500) + "px) scale(1.5, 1.5)";
-    if (-getElementTop(block1) >= 760) {
-        nav.style.display = "block";
-    } else {
-        nav.style.display = "none";
+function onScroll() {
+    return function () {
+        bg3.style.transform = "translate(-50%, " + ((getElementTop(block3) + 760) / 15.65 - 500) + "px) scale(1.5, 1.5)";
+        if (-getElementTop(block1) >= 760) {
+            nav.style.display = "block";
+        } else {
+            nav.style.display = "none";
+        }
+        if (getElementTop(block3) <= 0) {
+            for (i = 0; i < videos.length; i++) {
+                videos[i].play();
+            }
+        }
+        if (getElementTop(block7) <= 0) {
+            videol.play();
+        }
+        if (getElementTop(block11) <= 760) {
+            videom.play();
+        }
     }
+}
+window.addEventListener("scroll", onScroll());
 
+var slider = document.getElementsByClassName("slider")[0];
+var rotate = document.getElementsByClassName("rotate")[0];
+rotate.style.backgroundPosition = "0 " + (-570 * (slider.value - 1)) + "px";
+slider.addEventListener("input", function () {
+    rotate.style.backgroundPosition = "0 " + (-570 * (this.value - 1)) + "px";
 });
